@@ -239,6 +239,37 @@
         .card { background: var(--bg-panel); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-subtle); transition: 0.3s; }
         .stat-num { font-size: 3rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 15px; }
 
+        /* --- HOW IT WORKS (STILI AGGIUNTI) --- */
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .step-card {
+            background: var(--bg-panel);
+            padding: 2.5rem;
+            border-radius: 16px;
+            border: 1px solid var(--border-subtle);
+            position: relative;
+            text-align: center;
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            margin: 0 auto 1.5rem;
+            font-size: 1.2rem;
+        }
+
         /* --- FAQ STYLING --- */
         .faq-grid {
             display: grid;
@@ -439,6 +470,32 @@
         </div>
     </section>
 
+    <section id="how-it-works" class="section-padding how-it-works" style="background: #000;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Rapidità Totale</span>
+                <h2 class="section-title">Inizia in 30 secondi</h2>
+            </div>
+            <div class="step-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Attiva la Demo</h3>
+                    <p style="color: var(--text-dim);">Registrati gratuitamente e accedi alla console di valutazione.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Parla liberamente</h3>
+                    <p style="color: var(--text-dim);">Esegui i test sul paziente e descrivi ciò che vedi ad alta voce.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Copia il Report</h3>
+                    <p style="color: var(--text-dim);">L'AI genera il report strutturato pronto per il tuo gestionale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="faq" class="section-padding" style="border-top: 1px solid var(--border-subtle);">
         <div class="container">
             <div class="section-header">
@@ -470,7 +527,7 @@
                     <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 10px;">
                         Durante la fase Early Access, l'accesso è gratuito per i primi beta-tester. Successivamente, prevediamo un abbonamento flessibile.
                     </p>
-                
+                </div>
             </div>
         </div>
     </section>
