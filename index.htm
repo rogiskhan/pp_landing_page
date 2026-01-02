@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>PhysioPulse | Il Primo Fisioterapista AI per Valutazioni Cliniche</title>
+    <meta name="description" content="Ottimizza il tuo studio con PhysioPulse, l'assistente per fisioterapisti basato su intelligenza artificiale. Voice-to-report, test clinici istantanei e focus totale sul paziente.">
+    <meta name="keywords" content="fisioterapista AI, intelligenza artificiale fisioterapia, software fisioterapisti, assistente clinico AI, report fisioterapia automatici, anamnesi digitale">
+    <link rel="canonical" href="https://www.physiopulse.it/">
+
+    <meta property="og:title" content="PhysioPulse: L'Intelligenza Artificiale al servizio della Fisioterapia">
+    <meta property="og:description" content="Startup Early Access: automatizza i tuoi test clinici con la nostra AI vocale.">
+    <meta property="og:image" content="demo.gif">
+    <meta property="og:type" content="website">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "PhysioPulse",
+      "operatingSystem": "Web",
+      "applicationCategory": "HealthApplication",
+      "description": "Assistente intelligente per fisioterapisti che genera report clinici tramite IA vocale.",
+      "offers": { "@type": "Offer", "price": "0.00", "priceCurrency": "EUR" }
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --primary: #b666d2; 
+            --primary-dark: #9333ea;
+            --bg-deep: #050505; 
+            --bg-panel: #121214; 
+            --bg-card: #18181b; 
+            --text-main: #f3f4f6;
+            --text-dim: #a1a1aa;
+            --border-subtle: #27272a;
+            --success-green: #4ade80;
+            --error-red: #f87171;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background: var(--bg-deep);
+            overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* --- HEADER --- */
+        header {
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span { background: var(--primary); padding: 3px 8px; border-radius: 4px; font-size: 0.8rem; }
+
+        .nav-links { display: flex; gap: 1.5rem; list-style: none; align-items: center; }
+        .nav-links a { color: var(--text-dim); text-decoration: none; font-size: 0.85rem; transition: 0.3s; }
+        .nav-cta { background: var(--primary); color: white !important; padding: 0.5rem 1.2rem; border-radius: 6px; font-weight: 600; }
+
+        /* --- HERO --- */
+        .hero { padding: 140px 1.5rem 80px; background: radial-gradient(circle at 80% 20%, rgba(182, 102, 210, 0.08), transparent 40%); }
+        .hero-content { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center; }
+        .hero-text h1 { font-size: clamp(2.5rem, 7vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -1px; }
+        .hero-text .highlight { color: var(--primary); }
+        .tagline { font-size: 1.1rem; color: var(--text-dim); margin-bottom: 2.5rem; max-width: 540px; }
+
+        .dashboard-container {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+            position: relative;
+        }
+
+        .demo-gif { width: 100%; height: auto; display: block; opacity: 0.9; }
+
+        /* --- SEZIONI --- */
+        .section-padding { padding: 80px 1.5rem; }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .section-header { text-align: center; margin-bottom: 3.5rem; }
+        .section-label { color: var(--primary); font-weight: 700; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 2px; }
+        .section-title { font-size: clamp(1.8rem, 5vw, 2.8rem); margin-top: 10px; font-weight: 800; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+        .card { background: var(--bg-panel); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-subtle); transition: 0.3s; }
+        .stat-num { font-size: 3rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 15px; }
+
+        /* --- ROADMAP ACCATTIVANTE --- */
+        .roadmap-container { position: relative; padding: 2rem 0; }
+        .roadmap-line { position: absolute; left: 50%; width: 2px; height: 100%; background: var(--border-subtle); transform: translateX(-50%); }
+        .roadmap-step { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4rem; position: relative; width: 100%; }
+        .roadmap-content { width: 45%; background: var(--bg-panel); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-subtle); position: relative; }
+        .roadmap-step:nth-child(even) { flex-direction: row-reverse; }
+        .roadmap-dot { position: absolute; left: 50%; width: 16px; height: 16px; background: var(--primary); border-radius: 50%; transform: translateX(-50%); z-index: 2; box-shadow: 0 0 15px var(--primary); }
+        .roadmap-status { font-size: 0.7rem; font-weight: 800; color: var(--primary); text-transform: uppercase; margin-bottom: 0.5rem; display: block; }
+
+        /* --- PRIVACY BOX --- */
+        .privacy-box {
+            background: linear-gradient(145deg, #121214, #0a0a0a);
+            border: 1px solid var(--primary);
+            padding: 2.5rem;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        /* --- MODAL --- */
+        .modal-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 2000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: var(--bg-panel); padding: 2.5rem; border-radius: 20px; max-width: 500px; text-align: center; border: 1px solid var(--border-subtle); }
+
+        .btn-primary, .btn-secondary { padding: 1rem 2rem; border-radius: 8px; font-size: 1rem; font-weight: 700; text-decoration: none; cursor: pointer; display: inline-block; transition: 0.3s; border: none; }
+        .btn-primary { background: var(--primary); color: white; }
+        .btn-secondary { border: 1px solid var(--border-subtle); color: white; background: transparent; }
+
+        footer { padding: 4rem 1.5rem; border-top: 1px solid var(--border-subtle); text-align: center; color: var(--text-dim); }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 1024px) {
+            .hero-content { grid-template-columns: 1fr; text-align: center; }
+            .tagline { margin: 0 auto 2.5rem; }
+            .roadmap-line { left: 20px; }
+            .roadmap-dot { left: 20px; }
+            .roadmap-content { width: calc(100% - 60px); margin-left: 60px; }
+            .roadmap-step, .roadmap-step:nth-child(even) { flex-direction: row; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links li:not(:last-child) { display: none; }
+            .privacy-box { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="#" class="logo">PHYSIO <span>PULSE</span></a>
+            <ul class="nav-links">
+                <li><a href="#soluzione">Soluzione</a></li>
+                <li><a href="#roadmap">Roadmap</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#contatti" class="nav-cta">Contattaci</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <span class="section-label">AI-POWERED CLINICAL ASSISTANT</span>
+                <h1>Il primo <span class="highlight">Fisioterapista AI</span> per valutazioni in tempo reale</h1>
+                <p class="tagline">
+                    L'intelligenza artificiale che ascolta la tua valutazione, identifica i test eseguiti e genera report istantanei mentre ti occupi del paziente.
+                </p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                    <a class="btn-primary btn-open-modal">Prova Gratuita</a>
+                    <a href="#soluzione" class="btn-secondary">Scopri di più</a>
+                </div>
+            </div>
+
+            <div class="dashboard-container">
+                <img src="demo.gif" alt="PhysioPulse AI Demo - Trascrizione test clinici in tempo reale" class="demo-gif">
+                <div style="position: absolute; bottom: 15px; right: 15px; background: var(--primary); font-size: 11px; padding: 4px 10px; border-radius: 6px; font-weight: 800;">LIVE DEMO</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="problema" class="section-padding" style="background: #000;">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Il Problema</span>
+                <h2 class="section-title">Troppo tempo sui documenti,<br>poco sul paziente.</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="stat-num">50%</div>
+                    <h3>Tempo Perso</h3>
+                    <p style="color: var(--text-dim);">I fisioterapisti passano metà giornata a documentare test clinici manuali.</p>
+                </div>
+                <div class="card">
+                    <div class="stat-num">100%</div>
+                    <h3>Focus</h3>
+                    <p style="color: var(--text-dim);">L'AI ti permette di restare concentrato esclusivamente sul contatto manuale col paziente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="roadmap" class="section-padding">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Il Nostro Viaggio</span>
+                <h2 class="section-title">Roadmap di Sviluppo</h2>
+                <p style="color: var(--text-dim); margin-top: 1rem;">Costruiamo PhysioPulse insieme a voi. Ecco le prossime tappe.</p>
+            </div>
+
+            <div class="roadmap-container">
+                <div class="roadmap-line"></div>
+                
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-status">Ora Disponibile</span>
+                        <h3>Test Clinici & Voice-to-Report</h3>
+                        <p style="color: var(--text-dim);">L'AI riconosce i test ortopedici dalla tua voce e genera report PDF pronti all'uso.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-status">Q2 2026</span>
+                        <h3>Anamnesi & Bodychart Digitale</h3>
+                        <p style="color: var(--text-dim);">Mappatura visiva del dolore e raccolta automatica dei dati anagrafici del paziente.</p>
+                    </div>
+                </div>
+
+                <div class="roadmap-step">
+                    <div class="roadmap-dot"></div>
+                    <div class="roadmap-content">
+                        <span class="roadmap-status">Q3 2026</span>
+                        <h3>Smart Exercise Planner</h3>
+                        <p style="color: var(--text-dim);">Suggerimento automatico di schede esercizi basato sui deficit rilevati durante i test clinici.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="privacy-box">
+                <div style="font-size: 3.5rem;">🛡️</div>
+                <div>
+                    <h3>Privacy & Sicurezza Medica</h3>
+                    <p style="color: var(--text-dim);">
+                        Siamo una startup che rispetta il tuo lavoro. I dati sono criptati e conformi al GDPR. 
+                        Analizziamo i dati per i tuoi report, ma non memorizziamo audio sensibili né cediamo dati a terzi.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="section-padding" style="border-top: 1px solid var(--border-subtle);">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Domande Frequenti</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h4>Cos'è un Fisioterapista AI?</h4>
+                    <p style="color: var(--text-dim);">È un assistente che automatizza la burocrazia clinica, permettendoti di focalizzarti sulla terapia manuale.</p>
+                </div>
+                <div class="card">
+                    <h4>Perché una fase Beta?</h4>
+                    <p style="color: var(--text-dim);">Siamo una startup giovane: vogliamo che PhysioPulse sia perfetto per il tuo workflow quotidiano grazie ai tuoi feedback.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contatti" class="section-padding" style="background: #000;">
+        <div class="container">
+            <div class="contact-box" style="text-align: center;">
+                <h2 class="section-title">Contattaci</h2>
+                <a href="mailto:physio.pulse.info@gmail.com" class="contact-mail" style="color: var(--primary); font-size: 1.8rem; text-decoration: none; font-weight: 800; display: block; margin: 2rem 0;">physio.pulse.info@gmail.com</a>
+                <a href="mailto:physio.pulse.info@gmail.com" class="btn-primary">Inviaci un feedback</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 PhysioPulse. Progettato con i professionisti della salute.</p>
+    </footer>
+
+    <div id="betaModal" class="modal-overlay">
+        <div class="modal-content">
+            <div style="font-size: 3rem; margin-bottom: 1.5rem;">🚀</div>
+            <h3>Early Access Beta</h3>
+            <p style="color: var(--text-dim); margin-bottom: 2rem;">Accedi alla versione in sviluppo. Il tuo contributo è essenziale per ottimizzare l'accuratezza dei test clinici.</p>
+            <div style="display: flex; gap: 1rem; justify-content: center;">
+                <button onclick="closeModal()" class="btn-secondary">Annulla</button>
+                <a href="https://app.physiopulse.it/" class="btn-primary">Entra nella Beta</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('betaModal');
+        document.querySelectorAll('.btn-open-modal').forEach(btn => {
+            btn.addEventListener('click', (e) => { e.preventDefault(); modal.style.display = 'flex'; });
+        });
+        function closeModal() { modal.style.display = 'none'; }
+        window.onclick = (e) => { if (e.target == modal) closeModal(); }
+    </script>
+</body>
+</html>
