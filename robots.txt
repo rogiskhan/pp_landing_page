@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://physiopulse.it/sitemap.xml
