@@ -7,6 +7,14 @@
     <title>Software per Registrare Test Fisici in Fisioterapia | PhysioPulse</title>
     <meta name="description" content="Registra e organizza i test fisici in fisioterapia senza carta né Excel. PhysioPulse automatizza la valutazione clinica e genera report pronti. Demo gratuita.">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E51SMHXCC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6E51SMHXCC');
+    </script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
 
@@ -239,7 +247,6 @@
         .card { background: var(--bg-panel); padding: 2.5rem; border-radius: 16px; border: 1px solid var(--border-subtle); transition: 0.3s; }
         .stat-num { font-size: 3rem; font-weight: 800; color: var(--primary); line-height: 1; margin-bottom: 15px; }
 
-        /* --- HOW IT WORKS (STILI AGGIUNTI) --- */
         .step-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -578,11 +585,17 @@
     <script>
         const modal = document.getElementById('betaModal');
         
-        // Funzione per aprire il modal
+        // Funzione per aprire il modal e tracciare il click iniziale
         document.querySelectorAll('.btn-open-modal').forEach(btn => {
             btn.addEventListener('click', function(e) {
                 e.preventDefault(); 
                 modal.style.display = 'flex';
+                
+                // Google Analytics: Track opening the modal
+                gtag('event', 'open_demo_modal', {
+                    'event_category': 'Engagement',
+                    'event_label': 'Demo/Prova Click'
+                });
             });
         });
 
@@ -598,10 +611,17 @@
             }
         }
 
-        // Logica tracciamento link
+        // Logica tracciamento link e GA
         const trackingLink = document.getElementById('modal-link');
         if (trackingLink) {
             trackingLink.addEventListener('click', function() {
+                // Google Analytics: Track final conversion click
+                gtag('event', 'conversion', {
+                    'event_category': 'Leads',
+                    'event_label': 'Go to App Click'
+                });
+
+                // Simple Analytics tracking
                 if (typeof sa_event === "function") {
                     sa_event('redirect_app_click');
                 } else {
@@ -610,11 +630,6 @@
             });
         }
     </script>
-<!-- Simple Analytics - 100% privacy-first analytics -->
-<script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 </body>
 </html>
-
-
-
-
