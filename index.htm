@@ -561,11 +561,15 @@
             </div>
         </div>
     </section>
-
     <footer>
-        <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">PHYSIO <span>PULSE</span></div>
-        <p>© 2026 PhysioPulse. Progettato per i professionisti della salute.</p>
-    </footer> 
+    <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">PHYSIO <span>PULSE</span></div>
+    <p>© 2026 PhysioPulse. Progettato per i professionisti della salute.</p>
+    <p style="margin-top: 1rem;">
+        <a href="/privacy">Privacy Policy</a> · 
+        <a href="/cookie-policy">Cookie Policy</a> · 
+        <a href="/termini">Termini di Servizio</a>
+    </p>
+</footer>
 
     <div id="betaModal" class="modal-overlay">
         <div class="modal-content">
@@ -631,5 +635,31 @@
         }
     </script>
     <script data-collect-dnt="true" async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+    <!-- Add this before closing </body> tag -->
+<div id="cookieConsent" style="display:none; position:fixed; bottom:0; width:100%; background:#18181b; padding:20px; border-top:1px solid #27272a; z-index:9999;">
+    <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; gap:20px;">
+        <p style="margin:0; color:#a1a1aa;">
+            Utilizziamo cookie per migliorare la tua esperienza. Continuando a navigare accetti la nostra 
+            <a href="/cookie-policy" style="color:#b666d2;">Cookie Policy</a>.
+        </p>
+        <button onclick="acceptCookies()" style="background:#b666d2; color:white; border:none; padding:10px 20px; border-radius:6px; cursor:pointer; font-weight:600;">
+            Accetta
+        </button>
+    </div>
+</div>
+
+<script>
+function acceptCookies() {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookieConsent').style.display = 'none';
+}
+
+window.onload = function() {
+    if (!localStorage.getItem('cookiesAccepted')) {
+        document.getElementById('cookieConsent').style.display = 'block';
+    }
+}
+</script>
 </body>
 </html>
+
