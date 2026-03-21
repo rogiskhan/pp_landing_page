@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | PhysioPulse - Informativa sulla Privacy</title>
+    <meta name="description" content="Informativa sulla privacy della demo PhysioPulse. Scopri come gestiamo i dati in questa versione dimostrativa.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://physiopulse.it/privacy">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6E51SMHXCC"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-6E51SMHXCC');
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap');
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary: #b666d2;
+            --primary-dark: #9333ea;
+            --bg-deep: #050505;
+            --bg-panel: #121214;
+            --bg-card: #18181b;
+            --text-main: #f3f4f6;
+            --text-dim: #a1a1aa;
+            --border-subtle: #27272a;
+            --accent-blue: #60a5fa;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+        }
+        body {
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.7;
+            color: var(--text-main);
+            background: var(--bg-deep);
+            overflow-x: hidden;
+        }
+        header {
+            background: rgba(5,5,5,0.8);
+            backdrop-filter: blur(12px);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+        .logo span {
+            background: var(--primary);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .nav-links a:hover { color: var(--primary); }
+
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 2rem 80px;
+        }
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .privacy-label {
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        .privacy-title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+        .privacy-intro {
+            font-size: 1.05rem;
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .last-updated {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0 2rem;
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+        .last-updated strong { color: var(--primary); }
+
+        .demo-banner {
+            background: rgba(245,158,11,0.08);
+            border: 1px solid rgba(245,158,11,0.4);
+            border-radius: 12px;
+            padding: 1.5rem 2rem;
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+        .demo-banner p {
+            color: var(--warning);
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0;
+        }
+        .demo-banner p span {
+            display: block;
+            font-size: 0.9rem;
+            font-weight: 400;
+            margin-top: 0.4rem;
+            color: var(--text-dim);
+        }
+
+        .privacy-section {
+            background: var(--bg-panel);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+        }
+        .privacy-section h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .privacy-section h2::before {
+            content: '';
+            width: 4px;
+            height: 30px;
+            background: var(--primary);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .privacy-section h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 1.8rem 0 1rem;
+            color: var(--accent-blue);
+        }
+        .privacy-section p {
+            margin-bottom: 1.2rem;
+            color: var(--text-dim);
+            line-height: 1.8;
+        }
+        .privacy-section ul, .privacy-section ol {
+            margin: 1.2rem 0;
+            padding-left: 1.5rem;
+            color: var(--text-dim);
+        }
+        .privacy-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+        }
+        .privacy-section strong { color: var(--text-main); font-weight: 600; }
+
+        .highlight-box {
+            background: rgba(182,102,210,0.05);
+            border-left: 3px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .highlight-box p { margin-bottom: 0; }
+
+        .warning-box {
+            background: rgba(245,158,11,0.05);
+            border-left: 3px solid var(--warning);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .warning-box p { color: #fcd34d; margin-bottom: 0; }
+        .warning-box strong { color: var(--warning); }
+
+        .danger-box {
+            background: rgba(239,68,68,0.05);
+            border-left: 3px solid var(--danger);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1.5rem 0;
+        }
+        .danger-box p { color: #fca5a5; margin-bottom: 0.5rem; }
+        .danger-box p:last-child { margin-bottom: 0; }
+        .danger-box strong { color: var(--danger); }
+
+        .contact-dpo {
+            background: linear-gradient(135deg, rgba(182,102,210,0.1) 0%, rgba(96,165,250,0.05) 100%);
+            border: 1px solid var(--border-subtle);
+            padding: 2.5rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        .contact-dpo h3 { font-size: 1.5rem; margin-bottom: 1rem; color: var(--text-main); }
+        .contact-dpo a { color: var(--primary); text-decoration: none; font-weight: 600; font-size: 1.1rem; }
+        .contact-dpo a:hover { text-decoration: underline; }
+
+        footer {
+            padding: 4rem 1.5rem;
+            border-top: 1px solid var(--border-subtle);
+            text-align: center;
+            color: var(--text-dim);
+        }
+        footer a { color: var(--primary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            nav { padding: 0 1rem; }
+            .nav-links li:not(:last-child) { display: none; }
+            .privacy-container { padding: 110px 1.5rem 60px; }
+            .privacy-section { padding: 1.5rem; }
+            .privacy-section h2 { font-size: 1.4rem; }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <nav>
+        <a href="/" class="logo">PHYSIO <span>PULSE</span></a>
+        <ul class="nav-links">
+            <li><a href="/#problema">Problema</a></li>
+            <li><a href="/#soluzione">Soluzione</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/#contatti">Contatti</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="privacy-container">
+
+    <div class="privacy-header">
+        <span class="privacy-label">Informativa sulla Privacy</span>
+        <h1 class="privacy-title">Privacy Policy</h1>
+        <p class="privacy-intro">
+            Questa informativa descrive come la demo di PhysioPulse gestisce i dati degli utenti, 
+            in conformità con il GDPR (Regolamento UE 2016/679) e la normativa italiana applicabile.
+        </p>
+    </div>
+
+    <div class="last-updated">
+        <strong>Ultimo aggiornamento:</strong> 21 Marzo 2026
+    </div>
+
+    <div class="demo-banner">
+        <p>⚠️ VERSIONE DEMO — NESSUN DATO VIENE SALVATO
+            <span>Questa è una demo prototipale a scopo dimostrativo. Non raccoglie, archivia né trasmette dati personali o sanitari inseriti durante l'utilizzo.</span>
+        </p>
+    </div>
+
+    <!-- 1. TITOLARE -->
+    <div class="privacy-section">
+        <h2>1. Titolare del Trattamento</h2>
+        <p>
+            Il Titolare del trattamento dei dati personali è il progetto <strong>PhysioPulse</strong>, 
+            attualmente in fase di costituzione come soggetto giuridico. Fino al completamento della 
+            costituzione societaria, il progetto è gestito dai suoi fondatori.
+        </p>
+        <div class="highlight-box">
+            <p><strong>Email di contatto:</strong> <a href="mailto:info@physiopulse.it" style="color: var(--primary);">info@physiopulse.it</a></p>
+        </div>
+        <p>
+            Il Titolare si impegna a trattare i dati personali in conformità con le disposizioni del GDPR 
+            e della normativa italiana applicabile in materia di protezione dei dati personali.
+        </p>
+    </div>
+
+    <!-- 2. NATURA DELLA DEMO E DATI NON RACCOLTI -->
+    <div class="privacy-section">
+        <h2>2. Natura della Demo e Assenza di Raccolta Dati</h2>
+
+        <div class="danger-box">
+            <p><strong>⛔ IMPORTANTE</strong></p>
+            <p>
+                La presente versione di PhysioPulse è una <strong>demo prototipale</strong> che 
+                <strong>non salva, non archivia, non trasmette e non registra alcun dato</strong> 
+                immesso dall'utente durante l'utilizzo. Qualsiasi contenuto inserito nella piattaforma 
+                viene elaborato esclusivamente nella sessione corrente del browser e non viene 
+                conservato al termine della sessione.
+            </p>
+        </div>
+
+        <p>
+            Pertanto, la presente demo <strong>non raccoglie</strong>:
+        </p>
+        <ul>
+            <li>Dati di registrazione o credenziali di accesso</li>
+            <li>Dati clinici o sanitari di alcun tipo</li>
+            <li>Dati anagrafici dei pazienti o degli utenti</li>
+            <li>Registrazioni vocali o audio</li>
+            <li>Trascrizioni generate durante la sessione</li>
+            <li>Dati professionali degli utenti</li>
+        </ul>
+
+        <div class="warning-box">
+            <p>
+                <strong>Non inserire mai dati personali reali, dati sanitari o informazioni riservate 
+                in questa demo.</strong> Non è uno strumento adatto al trattamento di tali informazioni.
+            </p>
+        </div>
+    </div>
+
+    <!-- 3. DATI TECNICI DI NAVIGAZIONE -->
+    <div class="privacy-section">
+        <h2>3. Dati Tecnici di Navigazione</h2>
+        <p>
+            Come qualsiasi sito web, la navigazione su physiopulse.it può comportare la raccolta automatica 
+            di alcuni dati tecnici da parte dei sistemi informatici e dei protocolli di comunicazione di Internet. 
+            Tali dati includono, a titolo esemplificativo:
+        </p>
+        <ul>
+            <li>Indirizzo IP del dispositivo</li>
+            <li>Tipo di browser e sistema operativo</li>
+            <li>Pagine visitate e data/ora della visita</li>
+            <li>Indirizzo del sito web di provenienza (referrer)</li>
+        </ul>
+        <p>
+            Questi dati sono raccolti in modo anonimo e aggregato, non consentono l'identificazione 
+            dell'utente e vengono utilizzati esclusivamente per finalità tecniche di funzionamento 
+            e per analisi statistiche anonime sull'utilizzo della demo.
+        </p>
+
+        <h3>3.1 Strumenti di Analisi</h3>
+        <p>
+            Il sito potrebbe utilizzare strumenti di analisi del traffico web (come Google Analytics) 
+            che raccolgono dati di navigazione anonimi e aggregati. Tali strumenti non consentono 
+            l'identificazione del singolo utente. La base giuridica è il legittimo interesse 
+            (Art. 6(1)(f) GDPR) al miglioramento del servizio.
+        </p>
+        <p>
+            Gli utenti possono disabilitare la raccolta di tali dati tramite le impostazioni del 
+            proprio browser o installando appositi strumenti di opt-out forniti dai provider dei 
+            servizi di analisi.
+        </p>
+    </div>
+
+    <!-- 4. COOKIE -->
+    <div class="privacy-section">
+        <h2>4. Cookie e Tecnologie di Tracciamento</h2>
+        <p>
+            La demo di PhysioPulse utilizza esclusivamente cookie tecnici necessari al funzionamento 
+            della sessione. Non vengono utilizzati cookie di profilazione o cookie di marketing 
+            di terze parti per finalità commerciali.
+        </p>
+        <ul>
+            <li><strong>Cookie tecnici (necessari):</strong> Essenziali per il funzionamento della sessione — non richiedono consenso</li>
+            <li><strong>Cookie analitici anonimi:</strong> Statistiche di utilizzo aggregate e anonimizzate — richiedono consenso, raccolgono solo dati tecnici non identificativi</li>
+        </ul>
+        <p>
+            Gli utenti possono gestire o disabilitare i cookie attraverso le impostazioni del proprio browser.
+        </p>
+    </div>
+
+    <!-- 5. FINALITÀ DEL TRATTAMENTO -->
+    <div class="privacy-section">
+        <h2>5. Finalità del Trattamento dei Dati di Navigazione</h2>
+        <p>
+            I limitati dati tecnici di navigazione raccolti vengono trattati esclusivamente per:
+        </p>
+        <ul>
+            <li>Garantire il corretto funzionamento tecnico del sito web</li>
+            <li>Analisi statistiche anonime e aggregate sull'utilizzo della demo</li>
+            <li>Miglioramento dell'esperienza utente e delle funzionalità della demo</li>
+            <li>Prevenzione di abusi e garantire la sicurezza della piattaforma</li>
+        </ul>
+        <p>
+            <strong>Non vengono effettuate attività di profilazione, marketing diretto, 
+            o cessione di dati a terzi per finalità commerciali.</strong>
+        </p>
+    </div>
+
+    <!-- 6. ASSENZA DI DATI SANITARI -->
+    <div class="privacy-section">
+        <h2>6. Dati Sanitari — Divieto di Utilizzo nella Demo</h2>
+
+        <div class="danger-box">
+            <p><strong>⛔ DIVIETO ASSOLUTO DI INSERIMENTO DI DATI SANITARI</strong></p>
+            <p>
+                La demo di PhysioPulse <strong>non è progettata, certificata né idonea</strong> 
+                al trattamento di dati sanitari ai sensi dell'Art. 9 GDPR o del D.Lgs. 196/2003. 
+                È fatto divieto assoluto di inserire dati sanitari, dati clinici o qualsiasi 
+                informazione relativa allo stato di salute di persone reali.
+            </p>
+        </div>
+
+        <p>
+            In caso di inserimento di dati sanitari in violazione del presente divieto, 
+            l'utente si assume la piena e esclusiva responsabilità di tale trattamento. 
+            PhysioPulse declina ogni responsabilità derivante da tale utilizzo improprio.
+        </p>
+        <p>
+            La futura versione commerciale del prodotto sarà progettata e sviluppata in conformità 
+            con le normative applicabili al trattamento di dati sanitari, incluso il Regolamento 
+            (UE) 2017/745 (MDR) ove applicabile.
+        </p>
+    </div>
+
+    <!-- 7. DIRITTI DEGLI INTERESSATI -->
+    <div class="privacy-section">
+        <h2>7. Diritti degli Interessati</h2>
+        <p>
+            In conformità con il GDPR, gli utenti hanno il diritto di:
+        </p>
+        <ul>
+            <li><strong>Diritto di accesso (Art. 15):</strong> Ottenere conferma che sia in corso un trattamento di dati personali e riceverne copia</li>
+            <li><strong>Diritto di rettifica (Art. 16):</strong> Ottenere la rettifica di dati inesatti o l'integrazione di dati incompleti</li>
+            <li><strong>Diritto alla cancellazione (Art. 17):</strong> Ottenere la cancellazione dei dati ("diritto all'oblio") quando sussistono i presupposti previsti dalla normativa</li>
+            <li><strong>Diritto di limitazione (Art. 18):</strong> Ottenere la limitazione del trattamento quando ricorrono determinate condizioni</li>
+            <li><strong>Diritto alla portabilità (Art. 20):</strong> Ricevere i dati in formato strutturato e leggibile da dispositivo automatico</li>
+            <li><strong>Diritto di opposizione (Art. 21):</strong> Opporsi al trattamento per motivi connessi alla propria situazione particolare</li>
+            <li><strong>Diritto di revoca del consenso (Art. 7(3)):</strong> Revocare il consenso in qualsiasi momento, senza pregiudicare la liceità del trattamento precedente</li>
+        </ul>
+        <div class="highlight-box">
+            <p>
+                <strong>Come esercitare i diritti:</strong> Per esercitare i propri diritti, 
+                inviare una richiesta scritta a 
+                <a href="mailto:info@physiopulse.it" style="color: var(--primary);">info@physiopulse.it</a>. 
+                PhysioPulse risponderà entro <strong>30 giorni</strong> dalla ricezione della richiesta.
+            </p>
+        </div>
+
+        <h3>7.1 Diritto di Reclamo</h3>
+        <p>
+            Gli interessati hanno il diritto di proporre reclamo all'Autorità di controllo competente 
+            (Garante per la Protezione dei Dati Personali — 
+            <a href="https://www.garanteprivacy.it" target="_blank" style="color: var(--primary);">www.garanteprivacy.it</a>) 
+            qualora ritengano che il trattamento dei propri dati violi la normativa vigente.
+        </p>
+    </div>
+
+    <!-- 8. CONSERVAZIONE DATI -->
+    <div class="privacy-section">
+        <h2>8. Conservazione dei Dati</h2>
+        <p>
+            Poiché la demo non raccoglie né archivia dati personali degli utenti relativi alle 
+            interazioni con la piattaforma, non si applicano politiche di conservazione dei dati 
+            per tali categorie.
+        </p>
+        <p>
+            I limitati dati tecnici di navigazione eventualmente raccolti in forma aggregata e 
+            anonima vengono conservati per il tempo strettamente necessario alle finalità tecniche 
+            e statistiche descritte nella presente informativa, e comunque non oltre <strong>12 mesi</strong>.
+        </p>
+    </div>
+
+    <!-- 9. COMUNICAZIONE DATI A TERZI -->
+    <div class="privacy-section">
+        <h2>9. Comunicazione dei Dati a Terzi</h2>
+        <p>
+            PhysioPulse <strong>non cede, non vende e non trasferisce dati personali a terzi</strong> 
+            per finalità commerciali o di profilazione.
+        </p>
+        <p>
+            I dati tecnici di navigazione anonimi potrebbero essere trattati da fornitori di 
+            servizi tecnici (es. hosting, analisi web) che operano in qualità di Responsabili 
+            del Trattamento ai sensi dell'Art. 28 GDPR, sulla base di appositi accordi contrattuali 
+            e in conformità con le normative applicabili.
+        </p>
+        <p>
+            Eventuali trasferimenti di dati al di fuori dell'Unione Europea avvengono esclusivamente 
+            nel rispetto delle garanzie previste dal GDPR (Clausole Contrattuali Standard o 
+            framework equivalenti approvati dalla Commissione Europea).
+        </p>
+    </div>
+
+    <!-- 10. PROCESSO DECISIONALE AUTOMATIZZATO -->
+    <div class="privacy-section">
+        <h2>10. Processo Decisionale Automatizzato</h2>
+        <p>
+            PhysioPulse <strong>non effettua</strong> processi decisionali interamente automatizzati 
+            che producano effetti giuridici o che incidano significativamente sulla persona 
+            dell'interessato ai sensi dell'Art. 22 GDPR.
+        </p>
+        <p>
+            I contenuti generati dall'intelligenza artificiale nella demo sono puramente illustrativi 
+            e dimostrativi, privi di qualsiasi valenza clinica, professionale o decisionale.
+        </p>
+    </div>
+
+    <!-- 11. MODIFICHE ALLA PRIVACY POLICY -->
+    <div class="privacy-section">
+        <h2>11. Modifiche alla Privacy Policy</h2>
+        <p>
+            PhysioPulse si riserva il diritto di modificare la presente Privacy Policy in qualsiasi 
+            momento. Le modifiche saranno pubblicate su questa pagina con indicazione della data di 
+            aggiornamento. Si invitano gli utenti a consultare periodicamente questa pagina.
+        </p>
+        <p>
+            L'uso continuato della demo dopo la pubblicazione delle modifiche costituisce accettazione 
+            della Privacy Policy aggiornata.
+        </p>
+    </div>
+
+    <!-- 12. RIFERIMENTI NORMATIVI -->
+    <div class="privacy-section">
+        <h2>12. Riferimenti Normativi</h2>
+        <p>La presente Privacy Policy è redatta in conformità con:</p>
+        <ul>
+            <li>Regolamento UE 2016/679 (GDPR)</li>
+            <li>D.Lgs. 196/2003 ("Codice Privacy") come modificato dal D.Lgs. 101/2018</li>
+            <li>Provvedimenti e Linee Guida del Garante per la Protezione dei Dati Personali</li>
+            <li>Linee Guida del Comitato Europeo per la Protezione dei Dati (EDPB)</li>
+        </ul>
+    </div>
+
+    <!-- CONTACT BOX -->
+    <div class="contact-dpo">
+        <h3>📧 Hai domande sulla Privacy?</h3>
+        <p style="color: var(--text-dim); margin: 1rem 0;">
+            Per qualsiasi richiesta relativa al trattamento dei tuoi dati personali o per esercitare i tuoi diritti:
+        </p>
+        <a href="mailto:info@physiopulse.it">info@physiopulse.it</a>
+        <p style="color: var(--text-dim); font-size: 0.9rem; margin-top: 1.5rem;">
+            Risponderemo entro 30 giorni dalla ricezione della richiesta.
+        </p>
+    </div>
+
+</div>
+
+<footer>
+    <div class="logo" style="justify-content: center; margin-bottom: 1.5rem;">PHYSIO <span>PULSE</span></div>
+    <p>© 2026 PhysioPulse — Progetto in fase di costituzione. Tutti i diritti riservati.</p>
+    <p style="margin-top: 1rem;">
+        <a href="/termini">Termini di Servizio</a> ·
+        <a href="mailto:info@physiopulse.it">info@physiopulse.it</a>
+    </p>
+    <p style="margin-top: 1rem; font-size: 0.8rem; color: #52525b;">
+        Questa è una demo prototipale. Non salva dati. Non è uno strumento medico.
+    </p>
+</footer>
+
+</body>
+</html>
